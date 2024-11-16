@@ -4,6 +4,7 @@ import sys
 
 class MyWindow(QMainWindow):
     def __init__(self):
+        self.btn_PressedCounter = 0
         super(MyWindow, self).__init__()
         self.initUI()
 
@@ -20,7 +21,8 @@ class MyWindow(QMainWindow):
         self.btn_Button1.clicked.connect(self.clicked_button1)
     
     def clicked_button1(self):
-        self.label.setText("Button 1 clicked 01234567890")
+        self.btn_PressedCounter += 1
+        self.label.setText(f"Button 1 was Clicked {self.btn_PressedCounter} {'time' if (self.btn_PressedCounter == 1) else 'times'}")
         self.clicked_update()
 
     def clicked_update(self):
