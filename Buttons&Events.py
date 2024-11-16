@@ -21,6 +21,10 @@ class MyWindow(QMainWindow):
     
     def clicked_button1(self):
         self.label.setText("Button 1 clicked 01234567890")
+        self.clicked_update()
+
+    def clicked_update(self):
+        self.label.adjustSize()
 
 
 def window():
