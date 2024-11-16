@@ -104,13 +104,15 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_clr {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>CLR</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_answer_2">
+   <widget class="QLabel" name="lbl_operation">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -188,7 +190,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_divide {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>/</string>
@@ -221,7 +225,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_subtract {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>-</string>
@@ -254,7 +260,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_num7{
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>7</string>
@@ -287,7 +295,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_multiply {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>x</string>
@@ -320,7 +330,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_num8 {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>8</string>
@@ -353,7 +365,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_num9 {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>9</string>
@@ -386,7 +400,10 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+
+QPushButton:hover#btn_add {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>+</string>
@@ -419,7 +436,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_num5 {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>5</string>
@@ -452,7 +471,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_num6 {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>6</string>
@@ -485,7 +506,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_num4 {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>4</string>
@@ -518,7 +541,10 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+
+QPushButton:hover#btn_num1 {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>1</string>
@@ -551,7 +577,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_num2 {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>2</string>
@@ -584,7 +612,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_num3 {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>3</string>
@@ -617,7 +647,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_num0 {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>0</string>
@@ -650,7 +682,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_dot {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>.</string>
@@ -686,7 +720,9 @@
     padding: 10px; 
 	color: white;
 }
-</string>
+QPushButton:hover#btn_equal {
+    background-color: #0c6478; /* Hover state color */
+}</string>
     </property>
     <property name="text">
      <string>=</string>
