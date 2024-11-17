@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
     HasFloat=False
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(352, 595)
+        MainWindow.resize(352, 605)
 
         icon = QtGui.QIcon()
         icon.addPixmap(
@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
         self.btn_clr.setGeometry(QtCore.QRect(10, 160, 75, 75))
         font = QtGui.QFont()
         font.setFamily("Consolas")
-        font.setPointSize(24)
+        font.setPointSize(18)
         font.setBold(True)
         font.setWeight(75)
         self.btn_clr.setFont(font)
@@ -75,10 +75,11 @@ class Ui_MainWindow(object):
             "    border-radius: 15px;\n"
             "    background-color: #ffd167; \n"
             "    padding: 10px; \n"
-            "    color: white;\n"
+            "    color: black;\n"
             "}\n"
             "QPushButton:hover#btn_clr {\n"
             "    background-color: #0c6478; /* Hover state color */\n"
+            "    color: white;\n"
             "}"
         )
         self.btn_clr.setObjectName("btn_clr")
@@ -122,10 +123,11 @@ class Ui_MainWindow(object):
             "    border-radius: 15px;\n"
             "    background-color: #fda481; \n"
             "    padding: 10px; \n"
-            "    color: white;\n"
+            "    color: black;\n"
             "}\n"
             "QPushButton:hover#btn_divide {\n"
             "    background-color: #0c6478; /* Hover state color */\n"
+            "    color: white;\n"
             "}"
         )
         self.btn_divide.setObjectName("btn_divide")
@@ -144,10 +146,11 @@ class Ui_MainWindow(object):
             "    border-radius: 15px;\n"
             "    background-color: #fda481; \n"
             "    padding: 10px; \n"
-            "    color: white;\n"
+            "    color: black;\n"
             "}\n"
             "QPushButton:hover#btn_subtract {\n"
             "    background-color: #0c6478; /* Hover state color */\n"
+            "    color: white;\n"
             "}"
         )
         self.btn_subtract.setObjectName("btn_subtract")
@@ -188,10 +191,11 @@ class Ui_MainWindow(object):
             "    border-radius: 15px;\n"
             "    background-color: #fda481; \n"
             "    padding: 10px; \n"
-            "    color: white;\n"
+            "    color: black;\n"
             "}\n"
             "QPushButton:hover#btn_multiply {\n"
             "    background-color: #0c6478; /* Hover state color */\n"
+            "    color: white;\n"
             "}"
         )
         self.btn_multiply.setObjectName("btn_multiply")
@@ -254,11 +258,12 @@ class Ui_MainWindow(object):
             "    border-radius: 15px;\n"
             "    background-color: #fda481; \n"
             "    padding: 10px; \n"
-            "    color: white;\n"
+            "    color: black;\n"
             "}\n"
             "\n"
             "QPushButton:hover#btn_add {\n"
             "    background-color: #0c6478; /* Hover state color */\n"
+            "    color: white;\n"
             "}"
         )
         self.btn_add.setObjectName("btn_add")
@@ -455,10 +460,11 @@ class Ui_MainWindow(object):
             "    border-radius: 15px;\n"
             "    background-color: #ffd167; \n"
             "    padding: 10px; \n"
-            "    color: white;\n"
+            "    color: black;\n"
             "}\n"
             "QPushButton:hover#btn_equal {\n"
             "    background-color: #0c6478; /* Hover state color */\n"
+            "    color: white;\n"
             "}"
         )
         self.btn_equal.setObjectName("btn_equal")
@@ -569,17 +575,33 @@ class Ui_MainWindow(object):
         print("pressed clr\nCLEARED!")
     def get_answer(self, firstnum, secondnum, this_operation):
         if this_operation == 1:
-            return str((int(firstnum) + int(secondnum)) if self.HasFloat == False else (float(firstnum) + float(secondnum)))
+            if self.HasFloat:
+                return float(firstnum) + float(secondnum)
+            else:
+                return int(firstnum) + int(secondnum)
+        elif this_operation == 2:
+            if self.HasFloat:
+                return float(firstnum) - float(secondnum)
+            else:
+                return int(firstnum) - int(secondnum)
+        elif this_operation == 3:
+            if self.HasFloat:
+                return float(firstnum) * float(secondnum)
+            else:
+                return int(firstnum) * int(secondnum)
+        elif this_operation == 4:
+            if self.HasFloat:
+                return float(firstnum) / float(secondnum)
+            else:
+                return int(firstnum) / int(secondnum)
 
     def show_answer(self):
-        if self.ThisOperation == 1:
-            print("flag")
-            self.lbl_answer.setText(self.get_answer(self.FirstValue, self.SecondValue, self.ThisOperation))
-            self.Clicked_Counter = 0
-            self.FirstValue = "0"
-            self.SecondValue = "0"
-            self.ThisOperation = 0
-            self.Answer=0
+        print(f"HasFloat:{self.HasFloat}")
+        if self.get_answer(self.FirstValue, self.SecondValue, self.ThisOperation) % 1 != 0:
+            self.lbl_answer.setText(str(round(self.get_answer(self.FirstValue, self.SecondValue, self.ThisOperation),5)))
+        else:
+            self.lbl_answer.setText(str(self.get_answer(self.FirstValue, self.SecondValue, self.ThisOperation)))
+
 if __name__ == "__main__":
     import sys
 
