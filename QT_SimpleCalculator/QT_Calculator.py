@@ -507,7 +507,7 @@ class Ui_MainWindow(object):
         self.btn_equal.setText(_translate("MainWindow", "="))
 
     def clicked_button(self, which_button):
-        print(f"Button Pressed: {which_button}")
+        #print(f"Button Pressed: {which_button}")
         if self.ThisOperation == 0:
             if not which_button == "clr" and not which_button == "=" and not which_button == "+" and not which_button == "-" and not which_button == "x" and not which_button == "/" and not which_button == ".":
                 if(self.FirstValue == "0"):
@@ -525,9 +525,9 @@ class Ui_MainWindow(object):
                 elif which_button == "/":
                     self.ThisOperation = 4
                 elif which_button == ".":
-                    print("pressed dot")
+                    #print("pressed dot")
                     self.HasFloat = True
-                    print(f"HasFloat={self.HasFloat}") 
+                    #print(f"HasFloat={self.HasFloat}") 
                     self.FirstValue = self.FirstValue + which_button
                 elif which_button == "clr":
                     self.clear_all()
@@ -540,18 +540,18 @@ class Ui_MainWindow(object):
                     self.SecondValue = self.SecondValue + which_button
                 self.update_lbl_operation()
             elif which_button == "=":
-                print("pressed equal")
+                #print("pressed equal")
                 self.show_answer()
             elif which_button == ".":
-                print("pressed dot")
+                #print("pressed dot")
                 self.HasFloat = True
-                print(f"HasFloat={self.HasFloat}") 
+                #print(f"HasFloat={self.HasFloat}") 
                 self.SecondValue = self.SecondValue + which_button
             elif which_button == "clr":
                 self.clear_all()
 
     def update_lbl_operation(self):
-        print(f"This Operation: {self.ThisOperation}")
+        #print(f"This Operation: {self.ThisOperation}")
         if self.ThisOperation == 0:
            self.lbl_operation.setText(self.FirstValue)
         elif self.ThisOperation == 1:
@@ -572,7 +572,7 @@ class Ui_MainWindow(object):
         self.HasFloat=False
         self.update_lbl_operation()
         self.lbl_answer.setText("0")
-        print("pressed clr\nCLEARED!")
+        #print("pressed clr\nCLEARED!")
     def get_answer(self, firstnum, secondnum, this_operation):
         if this_operation == 1:
             if self.HasFloat:
@@ -596,7 +596,7 @@ class Ui_MainWindow(object):
                 return int(firstnum) / int(secondnum)
 
     def show_answer(self):
-        print(f"HasFloat:{self.HasFloat}")
+        #print(f"HasFloat:{self.HasFloat}")
         if self.get_answer(self.FirstValue, self.SecondValue, self.ThisOperation) % 1 != 0:
             self.lbl_answer.setText(str(round(self.get_answer(self.FirstValue, self.SecondValue, self.ThisOperation),5)))
         else:
